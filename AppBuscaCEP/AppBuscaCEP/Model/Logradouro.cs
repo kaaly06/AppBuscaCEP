@@ -4,8 +4,10 @@ using System.Text;
 
 namespace AppBuscaCEP.Model
 {
-    public class Bairro
+    public class Logradouro
     {
-        public string descricao_bairro { get; set; }
+        public string tipo { get; set; }
+
+        public string nome { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AppBuscaCEP.Model
 {
-    public class Logradouro
+    class CEP
     {
         public string Cep { get; set; }
         public string id_logradouro { get; set; }

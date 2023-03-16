@@ -17,6 +17,6 @@ namespace AppBuscaCEP.Model
         public string descricao_cidade_ibge { get; set; }
         public string descricao_bairro { get; set; }
         public object rows { get; set; }
-        public int CEP { get; set; }
+        public int Cep { get; set; }
     }
 }

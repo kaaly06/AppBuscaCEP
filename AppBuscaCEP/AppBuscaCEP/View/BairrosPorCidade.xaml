@@ -1,16 +1,30 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBuscaCEP.View.BairrosPorCidade">
-  <ContentView.Content>
+    
+  <ContentPage.Content>
+      
         <StackLayout>
             <StackLayout Orientation="Horizontal">
-                <SearchBar x:Name="txt_cidade"
-                           Placeholder="Qual é a sua Cidade?"/>
-                <Button Text="Buscar" Clicked="Button_Clicked"/>
+                <Picker x:Name="pck_estado"
+                        SelectedIndexChanged="pck_estado_SelectedIndexChanged"
+                        Title="Selecione o Estado:">
+                    <Picker.Items>
+                        <x:String>SP</x:String>
+                        <x:String>MG</x:String>
+                    </Picker.Items> 
+                </Picker>
+
+                <Picker x:Name="pck_cidade"
+                        SelectedIndexChanged="pck_cidade_SelectedIndexChanged"
+                        ItemDisplayBinding="{Binding descricao}"
+                        Title="Selecione a Cidade">
+                </Picker>
+                
             </StackLayout>
 
-            <ListView x:Name="lst_ceps">
+            <ListView x:Name="lst_bairro">
                 <ListView.Header>
                     <Grid ColumnDefinitions="Auto, *"
                           RowDefinitions="Auto">
@@ -32,11 +46,11 @@
                                   RowDefinitions="Auto">
                                 <Label Grid.Row="0" Grid.Column="0"
                                        Text="{Binding CEP}" />
-                                <Label Grid.Row="0" Grid.Column="1"
+                                <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
                                        Text="{Binding descricao_bairro}" />
-                                <Label Grid.Row="0" Grid.Column="2"
+                                <Label Grid.Row="0" Grid.Column="2"  
                                        Text="{Binding descricao_cidade}" />
-                                <Label Grid.Row="0" Grid.Column="3"
+                                <Label Grid.Row="0" Grid.Column="3"  Grid.ColumnSpan="2"
                                        Text="{Binding UF}"/>
                             </Grid>
                         </ViewCell>
@@ -44,5 +58,5 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-    </ContentView.Content>
-</ContentView>
+    </ContentPage.Content>
+</ContentPage>

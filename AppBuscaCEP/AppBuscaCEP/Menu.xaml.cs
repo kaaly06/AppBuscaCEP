@@ -17,7 +17,22 @@ namespace AppBuscaCEP
 			InitializeComponent ();
 		}
 
-        private void Button_Clicked_1(object sender, EventArgs e)
+        private void CepByLogradouro(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CidadesByEstado(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BairrosPorCidade(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogradouroByCep(object sender, EventArgs e)
         {
 
         }

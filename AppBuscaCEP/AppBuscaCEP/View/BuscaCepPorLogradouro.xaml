@@ -3,11 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBuscaCEP.View.BuscaCepPorLogradouro">
   <ContentView.Content>
+      
       <StackLayout>
             <StackLayout Orientation="Horizontal">
-                <SearchBar x:Name="txt_logradouro"
-                           Placeholder="Qual é sua rua?"/>
-                <Button Text="Buscar"/>
+                
 
                 <ListView x:Name="lst_ceps">
                     <ListView.Header>

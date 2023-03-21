@@ -97,9 +97,9 @@ namespace AppBuscaCEP.Service
                 return arr_cidade;
             }
         }
-        public static async Task<List<CEP>> GetCepByLogradouro(string logradouro)
+        public static async Task<List<Cep>> GetCepsByLogradouro(string logradouro)
         {
-            List<CEP> arr_Cep = new List<CEP>();
+            List<Cep> arr_cep = new List<Cep>();
 
             using (HttpClient client = new HttpClient())
             {
@@ -110,12 +110,12 @@ namespace AppBuscaCEP.Service
                 {
                     string json = response.Content?.ReadAsStringAsync().Result;
 
-                    arr_Cep = JsonConvert.DeserializeObject<List<CEP>>(json);
+                    arr_cep = JsonConvert.DeserializeObject<List<Cep>>(json);
                 }
                 else
                     throw new Exception(response.RequestMessage.Content.ToString());
 
-                return arr_Cep;
+                return arr_cep;
             }
         }
     }

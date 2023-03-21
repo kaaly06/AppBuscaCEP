@@ -5,22 +5,24 @@
              x:Class="AppBuscaCEP.Menu">
 
     <ContentPage.Content>
-        <Grid ColumnDefinitions="*, *" RowDefinitions="*, *, *, *">
+        <Grid ColumnDefinitions="*, *" 
+              RowDefinitions="*, *, *, *">
+            
             <Label Grid.Row="0" Grid.Column="0"
-                   Grid.ColumnSpan="2"
-                   
+                   Grid.ColumnSpan="2"                  
                    Text="Api Busca Cep"/>
+            
             <Button Grid.Row="1" Grid.Column="0"
-                    Text="Buscar Cep" Clicked="Button_Clicked"/>
+                    Text="Buscar Cep" Clicked="CepByLogradouro"/>
 
             <Button Grid.Row="1" Grid.Column="1"
-                    Text="Buscar Cidades"/>
+                    Text="Buscar Cidades" Clicked="CidadesByestado" />
 
             <Button Grid.Row="2" Grid.Column="0"
-                    Text="Buscar Ruas de Bairro"/>
+                    Text="Buscar Ruas de Bairro" Clicked="LogradouroByCep"/>
 
             <Button Grid.Row="2" Grid.Column="1"
-                    Text=""/>
+                    Text="Buscar Bairro" Clicked="BairrosPorCidade"/>
 
         </Grid>
     </ContentPage.Content>

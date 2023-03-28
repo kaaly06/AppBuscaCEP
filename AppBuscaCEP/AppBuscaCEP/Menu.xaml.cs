@@ -17,22 +17,22 @@ namespace AppBuscaCEP
 			InitializeComponent ();
 		}
 
-        private void CepByLogradouro(object sender, EventArgs e)
+        private void BuscarCep(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new View.BuscaCepPorLogradouro());
+        }
+
+        private void BuscarCidades(object sender, EventArgs e)
         {
 
         }
 
-        private void CidadesByEstado(object sender, EventArgs e)
+        private void BuscarRuasdeBairro(object sender, EventArgs e)
         {
 
         }
 
-        private void BairrosPorCidade(object sender, EventArgs e)
-        {
-
-        }
-
-        private void LogradouroByCep(object sender, EventArgs e)
+        private void BuscarBairro(object sender, EventArgs e)
         {
 
         }

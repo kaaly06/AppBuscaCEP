@@ -1,45 +1,43 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBuscaCEP.View.BuscaCepPorLogradouro">
-  <ContentView.Content>
-      
-      <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                
 
-                <ListView x:Name="lst_ceps">
-                    <ListView.Header>
-                        <Grid ColumnDefinitions="Auto, *"
-                              RowDefinitions="Auto">
-                            <Label Grid.Row="0" Grid.Column="0"
-                                   Text="CEP"/>
-                            <Label Grid.Row="0" Grid.Column="0"
-                                   Text="Logradouro"/>
-                            <Label Grid.Row="0" Grid.Column="0"
-                                   Text="Cidade"/>
-                            <Label Grid.Row="0" Grid.Column="0"
-                                   Text="UF"/>
-                        </Grid>
-                    </ListView.Header>
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <Grid ColumnDefinitions="Auto, *, *, Auto" RowDefinitions="Auto">
-                                    <Label Grid.Row="0" Grid.Column="0"
-                                           Text="{Binding CEP}"/>
-                                    <Label Grid.Row="0" Grid.Column="1"
-                                           Text="{Binding descricao_logradouro}"/>
-                                    <Label Grid.Row="0" Grid.Column="2"
-                                           Text="{Binding descricao_cidade}"/>
-                                    <Label Grid.Row="0" Grid.Column="3"
-                                           Text="{Binding UF}"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <SearchBar x:Name="txt_logradouro" Placeholder="Rua:"/>
+                <Button Text="Buscar" Clicked="BuscarRua"/>
             </StackLayout>
+
+            <ListView x:Name="lst_ceps">
+                <ListView.Header>
+                    <Grid ColumnDefinitions="Auto, *, *" RowDefinitions="Auto">
+                        <Label Grid.Row="0" Grid.Column="0" Text="CEP"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="Logradouro"/>
+                        <Label Grid.Row="0" Grid.Column="2" Text="Cidade"/>
+                        <Label Grid.Row="0" Grid.Column="3" Text="UF"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnDefinitions="Auto, *, *, Auto" RowDefinitions="Auto">
+                                <Label Grid.Row="0" Grid.Column="0"
+                                           Text="{Binding CEP}"/>
+                                <Label Grid.Row="0" Grid.Column="1"
+                                           Text="{Binding descricao_logradouro}"/>
+                                <Label Grid.Row="0" Grid.Column="2"
+                                           Text="{Binding descricao_cidade}"/>
+                                <Label Grid.Row="0" Grid.Column="3"
+                                           Text="{Binding UF}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ActivityIndicator x:Name="carregando" IsRunning="False"/>
         </StackLayout>
-  </ContentView.Content>
-</ContentView>
+    </ContentPage.Content>
+</ContentPage>

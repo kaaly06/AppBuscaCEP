@@ -24,8 +24,6 @@
             <Button Grid.Row="2" Grid.Column="1"
                     Text="Buscar Bairro" Clicked="BuscarBairro"/>
             
-            <Button Grid.Row="3" Grid.Column="0" 
-                    Text="Logradouro" Command="Logradouro"/>
 
         </Grid>
     </ContentPage.Content>

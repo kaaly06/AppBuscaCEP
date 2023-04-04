@@ -10,6 +10,8 @@ namespace AppBuscaCEP
         {
             InitializeComponent();
 
+            MainPage = new NavigationPage(new Menu());
+
         }
 
         protected override void OnStart()
